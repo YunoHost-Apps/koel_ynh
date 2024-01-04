@@ -21,11 +21,14 @@ cpe = "cpe:2.3:a:koel:koel"
 fund = "https://opencollective.com/koel"
 
 [integration]
-yunohost = ">= 11.1.21"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
+
 ldap = false
+
 sso = false
+
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"
