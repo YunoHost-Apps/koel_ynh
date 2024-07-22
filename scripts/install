@@ -19,7 +19,6 @@ ynh_script_progression --message="Setting up source files..." --weight=1
 ynh_setup_source --dest_dir="$install_dir"
 
 chown -R $app:www-data "$install_dir"
-chown -R $app:www-data "$data_dir"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -44,7 +43,7 @@ ynh_add_config --template="env" --destination="$install_dir/.env"
 #=================================================
 # INITIALIZE THE APP
 #=================================================
-ynh_script_progression --message="Initializing Koel..." --weight=1
+ynh_script_progression --message="Initializing $app..." --weight=1
 
 pushd $install_dir
 	ynh_exec_as $app php$phpversion artisan koel:init --no-assets --no-interaction --quiet
