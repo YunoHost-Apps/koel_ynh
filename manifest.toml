@@ -21,7 +21,8 @@ cpe = "cpe:2.3:a:koel:koel"
 fund = "https://opencollective.com/koel"
 
 [integration]
-yunohost = ">= 11.1.21"
+yunohost = ">= 11.2.18"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -53,6 +54,7 @@ ram.runtime = "50M"
     allow_email = true
 
     [resources.install_dir]
+    group = "www-data:r-x"
 
     [resources.data_dir]
 
