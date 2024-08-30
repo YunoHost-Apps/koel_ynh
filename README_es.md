@@ -21,7 +21,7 @@ Koel is a simple web-based personal audio streaming service written in Vue on th
 Targeting web developers, Koel embraces some of the more modern web technologies to do its job.
 
 
-**Versión actual:** 7.0.10~ynh1
+**Versión actual:** 7.0.11~ynh1
 
 **Demo:** <https://demo.koel.dev>
 
