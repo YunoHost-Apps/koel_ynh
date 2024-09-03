@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
@@ -13,14 +7,14 @@ source /usr/share/yunohost/helpers
 # REMOVE SYSTEM CONFIGURATIONS
 #=================================================
 
-ynh_remove_nginx_config
+ynh_config_remove_nginx
 
-ynh_remove_fpm_config
+ynh_config_remove_phpfpm
 
-ynh_secure_remove --file="/home/yunohost.multimedia/$app"
+ynh_safe_rm "/home/yunohost.multimedia/$app"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Removal of $app completed" --last
+ynh_script_progression "Removal of $app completed"
