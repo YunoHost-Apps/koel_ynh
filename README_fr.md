@@ -21,7 +21,7 @@ Un simple service web de streaming audio personnel, écrit en Vue pour le client
 Destiné aux développeurs web, Koel utilise certaines des technologies web les plus modernes pour accomplir son travail.
 
 
-**Version incluse :** 7.0.12~ynh1
+**Version incluse :** 7.1.0~ynh1
 
 **Démo :** <https://demo.koel.dev>
 
