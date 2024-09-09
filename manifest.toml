@@ -7,7 +7,7 @@ name = "Koel"
 description.en = "Simple web-based personal audio streaming service"
 description.fr = "Simple service web de streaming audio personnel"
 
-version = "7.0.10~ynh1"
+version = "7.1.0~ynh1"
 
 maintainers = ["tituspijean"]
 
@@ -21,7 +21,8 @@ cpe = "cpe:2.3:a:koel:koel"
 fund = "https://opencollective.com/koel"
 
 [integration]
-yunohost = ">= 11.1.21"
+yunohost = ">= 11.2.29"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -43,8 +44,8 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/koel/koel/releases/download/v7.0.10/koel-v7.0.10.tar.gz"
-    sha256 = "8c3fe63ed0d416a94f456050ccc622be9a94b7d85f585b444d0317201fafc767"
+    url = "https://github.com/koel/koel/releases/download/v7.1.0/koel-v7.1.0.tar.gz"
+    sha256 = "c468a0e6ad5a5cc4e05541e14e42e9d8b93a8013d76c0b065addc4097c1f5114"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset = "^koel-v.*tar.gz$"
@@ -53,6 +54,7 @@ ram.runtime = "50M"
     allow_email = true
 
     [resources.install_dir]
+    group = "www-data:r-x"
 
     [resources.data_dir]
 
