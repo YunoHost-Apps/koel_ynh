@@ -5,7 +5,9 @@
 
 # YunoHost 上的 Koel
 
-[![集成程度](https://dash.yunohost.org/integration/koel.svg)](https://ci-apps.yunohost.org/ci/apps/koel/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/koel.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/koel.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/koel)](https://ci-apps.yunohost.org/ci/apps/koel/)
+![工作状态](https://apps.yunohost.org/badge/state/koel)
+![维护状态](https://apps.yunohost.org/badge/maintained/koel)
 
 [![使用 YunoHost 安装 Koel](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=koel)
 
@@ -21,7 +23,7 @@ Koel is a simple web-based personal audio streaming service written in Vue on th
 Targeting web developers, Koel embraces some of the more modern web technologies to do its job.
 
 
-**分发版本：** 7.2.0~ynh1
+**分发版本：** 7.2.1~ynh1
 
 **演示：** <https://demo.koel.dev>
 

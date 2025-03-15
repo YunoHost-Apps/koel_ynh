@@ -5,7 +5,9 @@ Hij mag NIET handmatig aangepast worden.
 
 # Koel voor Yunohost
 
-[![Integratieniveau](https://dash.yunohost.org/integration/koel.svg)](https://ci-apps.yunohost.org/ci/apps/koel/) ![Mate van functioneren](https://ci-apps.yunohost.org/ci/badges/koel.status.svg) ![Onderhoudsstatus](https://ci-apps.yunohost.org/ci/badges/koel.maintain.svg)
+[![Integratieniveau](https://apps.yunohost.org/badge/integration/koel)](https://ci-apps.yunohost.org/ci/apps/koel/)
+![Mate van functioneren](https://apps.yunohost.org/badge/state/koel)
+![Onderhoudsstatus](https://apps.yunohost.org/badge/maintained/koel)
 
 [![Koel met Yunohost installeren](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=koel)
 
@@ -21,7 +23,7 @@ Koel is a simple web-based personal audio streaming service written in Vue on th
 Targeting web developers, Koel embraces some of the more modern web technologies to do its job.
 
 
-**Geleverde versie:** 7.2.0~ynh1
+**Geleverde versie:** 7.2.1~ynh1
 
 **Demo:** <https://demo.koel.dev>
 
