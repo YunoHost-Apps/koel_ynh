@@ -18,6 +18,7 @@ demo = "https://demo.koel.dev"
 admindoc = "https://docs.koel.dev"
 code = "https://github.com/koel/koel"
 cpe = "cpe:2.3:a:koel:koel"
+
 fund = "https://opencollective.com/koel"
 
 [integration]
@@ -25,8 +26,11 @@ yunohost = ">= 11.2.29"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
+
 ldap = false
+
 sso = false
+
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"
@@ -58,10 +62,10 @@ ram.runtime = "50M"
 
     [resources.data_dir]
 
-    [resources.ports]
-
     [resources.permissions]
     main.url = "/"
+
+    [resources.ports]
 
     [resources.apt]
     packages = [
