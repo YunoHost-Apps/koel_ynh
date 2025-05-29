@@ -7,7 +7,7 @@ name = "Koel"
 description.en = "Simple web-based personal audio streaming service"
 description.fr = "Simple service web de streaming audio personnel"
 
-version = "7.4.2~ynh1"
+version = "7.5.1~ynh1"
 
 maintainers = ["tituspijean"]
 
@@ -48,8 +48,8 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/koel/koel/releases/download/v7.4.2/koel-v7.4.2.tar.gz"
-    sha256 = "d9155c83b98dcd3e6fcb246b1f5f8f8ee0ea93e046754378895c6d78493a7eeb"
+    url = "https://github.com/koel/koel/releases/download/v7.5.1/koel-v7.5.1.tar.gz"
+    sha256 = "53500b3963fc7ea2be5cf266a923ed166d13e9121d00117d85a5e08d7afd9be4"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset = "^koel-v.*tar.gz$"
