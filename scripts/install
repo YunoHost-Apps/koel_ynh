@@ -20,6 +20,12 @@ ynh_script_progression "Setting up source files..."
 # Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
 
+# Set permissions
+chown -R $app:$app $install_dir
+find $install_dir -type f -print0 | xargs -0 chmod 644
+find $install_dir -type d -print0 | xargs -0 chmod 755
+chmod -R ug+rwx $install_dir/storage $install_dir/bootstrap/cache
+
 #=================================================
 # INITIALIZE MULTIMEDIA DIRECTORIES
 #================================================
