@@ -7,7 +7,7 @@ name = "Koel"
 description.en = "Simple web-based personal audio streaming service"
 description.fr = "Simple service web de streaming audio personnel"
 
-version = "8.1.0~ynh1"
+version = "8.2.0~ynh1"
 
 maintainers = ["tituspijean"]
 
@@ -18,7 +18,6 @@ demo = "https://demo.koel.dev"
 admindoc = "https://docs.koel.dev"
 code = "https://github.com/koel/koel"
 cpe = "cpe:2.3:a:koel:koel"
-
 fund = "https://opencollective.com/koel"
 
 [integration]
@@ -30,9 +29,9 @@ multi_instance = true
 ldap = false
 sso = false
 
-disk = "50M"
-ram.build = "50M"
-ram.runtime = "50M"
+disk = "300M"
+ram.build = "150M"
+ram.runtime = "150M"
 
 [install]
     [install.domain]
@@ -47,8 +46,8 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/koel/koel/releases/download/v8.1.0/koel-v8.1.0.tar.gz"
-    sha256 = "b266868db3ed9fddc7ccd8b717bde18d01c05d43a7d742264f0fe32dbb50ceb7"
+    url = "https://github.com/koel/koel/releases/download/v8.2.0/koel-v8.2.0.tar.gz"
+    sha256 = "16fe8c5bfaa3529b9290bfc2c52eef4f62e404f7c77a25c5314e49e1714c131f"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset = "^koel-v.*tar.gz$"
@@ -68,12 +67,12 @@ ram.runtime = "50M"
 
     [resources.apt]
     packages = [
-        "php8.2-fpm",
-        "php8.2-gd",
-        "php8.2-mbstring",
-        "php8.2-mysql",
-        "php8.2-sqlite3",
-        "php8.2-xml",
+        "php8.4-fpm",
+        "php8.4-gd",
+        "php8.4-mbstring",
+        "php8.4-mysql",
+        "php8.4-sqlite3",
+        "php8.4-xml",
         "mariadb-server",
         "ffmpeg",
     ]
