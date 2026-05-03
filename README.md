@@ -8,7 +8,7 @@ It shall NOT be edited by hand.
   Koel, packaged for YunoHost
 </h1>
 
-Simple web-based personal audio streaming service
+Web-based personal audio streaming service
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://koel.dev)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://demo.koel.dev)
