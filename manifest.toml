@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "koel"
 name = "Koel"
-description.en = "Simple web-based personal audio streaming service"
-description.fr = "Simple service web de streaming audio personnel"
+description.en = "Web-based personal audio streaming service"
+description.fr = "Service web de streaming audio personnel"
 
 version = "9.2.0~ynh1"
 

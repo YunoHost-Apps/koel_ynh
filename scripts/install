@@ -68,10 +68,9 @@ pushd $install_dir
 	chown $app:$app /tmp/koel
 
 	ynh_exec_as_app php$php_version artisan koel:init --no-assets --no-interaction --quiet
-
-	# Add cron job for scheduler
-	(crontab -l -u $app 2>/dev/null; echo "* * * * * cd $install_dir && php${php_version} artisan schedule:run >> /dev/null 2>&1") | crontab -u $app -
 popd
+
+ynh_config_add --template="cron" --destination="/etc/cron.d/$app"
 
 #=================================================
 # SYSTEM CONFIGURATION
