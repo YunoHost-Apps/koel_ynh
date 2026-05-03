@@ -20,6 +20,21 @@ ynh_script_progression "Setting up source files..."
 # Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
 
+# Set permissions for the app directory
+#
+# 1. Set the owner of all files and directories to the app user.
+chown -R $app:$app $install_dir
+#
+# 2. Set the permissions for all files to 644 (read/write for owner, read-only for others).
+find $install_dir -type f -print0 | xargs -0 chmod 644
+#
+# 3. Set the permissions for all directories to 755 (read/write/execute for owner, read/execute for others).
+find $install_dir -type d -print0 | xargs -0 chmod 755
+#
+# 4. Grant write permissions to the group for the storage and bootstrap/cache directories,
+#    as required by Laravel.
+chmod -R ug+rwx $install_dir/storage $install_dir/bootstrap/cache
+
 #=================================================
 # INITIALIZE MULTIMEDIA DIRECTORIES
 #================================================
@@ -28,6 +43,9 @@ ynh_script_progression "Initializing multimedia directories..."
 ynh_multimedia_build_main_dir
 ynh_multimedia_addfolder --source_dir="$data_dir" --dest_dir="$app"
 ynh_multimedia_addaccess $app
+
+# Set media directory permissions
+chown -R $app:$app "$data_dir"
 
 #=================================================
 # APP INITIAL CONFIGURATION
@@ -44,7 +62,15 @@ ynh_config_add --template="env" --destination="$install_dir/.env"
 ynh_script_progression "Initializing $app..."
 
 pushd $install_dir
+	# Koel uses a temporary directory for various tasks, like caching.
+	# Create and set permissions for /tmp/koel
+	mkdir -p /tmp/koel
+	chown $app:$app /tmp/koel
+
 	ynh_exec_as_app php$php_version artisan koel:init --no-assets --no-interaction --quiet
+
+	# Add cron job for scheduler
+	(crontab -l -u $app 2>/dev/null; echo "* * * * * cd $install_dir && php${php_version} artisan schedule:run >> /dev/null 2>&1") | crontab -u $app -
 popd
 
 #=================================================
