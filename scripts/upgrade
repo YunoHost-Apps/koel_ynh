@@ -33,6 +33,10 @@ chown $app:www-data -R $install_dir/bootstrap/cache
 chmod g=rwX -R $install_dir/storage
 chmod g=rwX -R $install_dir/bootstrap/cache
 
+# Set media directory permissions
+chown -R $app:www-data "$data_dir"
+chmod ug=rwX,o-rwX "$data_dir"
+
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================

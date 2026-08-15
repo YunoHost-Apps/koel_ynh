@@ -42,7 +42,8 @@ ynh_multimedia_addfolder --source_dir="$data_dir" --dest_dir="$app"
 ynh_multimedia_addaccess $app
 
 # Set media directory permissions
-chown -R $app:$app "$data_dir"
+chown -R $app:www-data "$data_dir"
+chmod ug=rwX,o-rwX "$data_dir"
 
 #=================================================
 # APP INITIAL CONFIGURATION
