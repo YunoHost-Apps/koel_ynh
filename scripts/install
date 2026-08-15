@@ -20,20 +20,17 @@ ynh_script_progression "Setting up source files..."
 # Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
 
-# Set permissions for the app directory
-#
-# 1. Set the owner of all files and directories to the app user.
+# Set default secure permissions for the app directory
 chown -R $app:$app $install_dir
-#
-# 2. Set the permissions for all files to 644 (read/write for owner, read-only for others).
-find $install_dir -type f -print0 | xargs -0 chmod 644
-#
-# 3. Set the permissions for all directories to 755 (read/write/execute for owner, read/execute for others).
-find $install_dir -type d -print0 | xargs -0 chmod 755
-#
-# 4. Grant write permissions to the group for the storage and bootstrap/cache directories,
-#    as required by Laravel.
-chmod -R ug+rwx $install_dir/storage $install_dir/bootstrap/cache
+chmod u=rwX,g=rX,o-rwX -R  $install_dir
+
+# Set specific directories permissions for Laravel
+chown $app:www-data $install_dir
+chown $app:www-data -R $install_dir/public
+chown $app:www-data -R $install_dir/storage
+chown $app:www-data -R $install_dir/bootstrap_cache
+chmod g=rwX -R $install_dir/storage
+chmod g=rwX -R $install_dir/bootstrap_cache
 
 #=================================================
 # INITIALIZE MULTIMEDIA DIRECTORIES

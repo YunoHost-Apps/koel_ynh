@@ -21,6 +21,18 @@ ynh_script_progression "Upgrading source files..."
 # Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
 
+# Set default secure permissions for the app directory
+chown -R $app:$app $install_dir
+chmod u=rwX,g=rX,o-rwX -R  $install_dir
+
+# Set specific directories permissions for Laravel
+chown $app:www-data $install_dir
+chown $app:www-data -R $install_dir/public
+chown $app:www-data -R $install_dir/storage
+chown $app:www-data -R $install_dir/bootstrap_cache
+chmod g=rwX -R $install_dir/storage
+chmod g=rwX -R $install_dir/bootstrap_cache
+
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
