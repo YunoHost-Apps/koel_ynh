@@ -21,7 +21,7 @@ cpe = "cpe:2.3:a:koel:koel"
 fund = "https://opencollective.com/koel"
 
 [integration]
-yunohost = ">= 12.1.38"
+yunohost = ">= 12.1.40"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -68,12 +68,11 @@ ram.runtime = "150M"
 
     [resources.apt]
     packages = [
-        "php8.4-fpm",
-        "php8.4-gd",
-        "php8.4-mbstring",
-        "php8.4-mysql",
-        "php8.4-sqlite3",
-        "php8.4-xml",
+        "php8.5-gd",
+        "php8.5-mbstring",
+        "php8.5-mysql",
+        "php8.5-sqlite3",
+        "php8.5-xml",
         "mariadb-server",
         "ffmpeg",
     ]
